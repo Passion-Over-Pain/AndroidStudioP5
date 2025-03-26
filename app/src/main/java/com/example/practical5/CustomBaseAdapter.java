@@ -12,20 +12,20 @@ import android.widget.TextView;
 public class CustomBaseAdapter extends BaseAdapter
 {
     Context context;
-    String listSmoothies[];
+    String listCountries[];
     int listImages[];
     LayoutInflater inflater;
 
-    public CustomBaseAdapter(Context ctx, String [] smoothieList, int [] smoothieImages)
+    public CustomBaseAdapter(Context ctx, String [] countryList, int [] countryImages)
     {
         this.context = ctx;
-        this.listSmoothies = smoothieList;
-        this.listImages = smoothieImages;
+        this.listCountries = countryList;
+        this.listImages = countryImages;
         inflater = LayoutInflater.from(ctx);
     }
     @Override
     public int getCount() {
-        return listSmoothies.length;
+        return listCountries.length;
     }
 
     @Override
@@ -41,12 +41,12 @@ public class CustomBaseAdapter extends BaseAdapter
     @SuppressLint("ViewHolder")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = inflater.inflate(R.layout.activity_smoothie_list, null);
-        TextView smoothieTextView = (TextView) convertView.findViewById(R.id.smoothieTextView);
-        ImageView smoothieImageView = (ImageView) convertView.findViewById(R.id.imageIcon);
+        convertView = inflater.inflate(R.layout.activity_country_list, null);
+        TextView countryTextView = (TextView) convertView.findViewById(R.id.countryTextView);
+        ImageView countryImageView = (ImageView) convertView.findViewById(R.id.imageIcon);
 
-        smoothieTextView.setText(listSmoothies[position]);
-        smoothieImageView.setImageResource(listImages[position]);
+        countryTextView.setText(listCountries[position]);
+        countryImageView.setImageResource(listImages[position]);
         return convertView;
     }
 }

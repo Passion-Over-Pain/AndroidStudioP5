@@ -15,21 +15,21 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] smoothieList = {"Tropical","Peach-plum","Melon-lemon","Hulk-classic","Berrific","Smoothie Site"};
-    int[] smoothieImages = {R.drawable.tropical, R.drawable.peachplum, R.drawable.melonlemon, R.drawable.hulkclassic, R.drawable.berrific,R.drawable.gingermangoberry};
+    String[] countryList = {"Nigeria","South-Africa","United-States","United-Kingdom","Zambia","Zimbabwe"};
+    int[] countryImages = {R.drawable.nigeria, R.drawable.southafrica, R.drawable.unitedstates, R.drawable.unitedkingdom, R.drawable.zambia,R.drawable.zimbabwe};
     ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btnGo3), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        listView = (ListView) findViewById(R.id.customSmoothieList);
-        CustomBaseAdapter customBaseAdapter = new CustomBaseAdapter(getApplicationContext(), smoothieList, smoothieImages);
+        listView = (ListView) findViewById(R.id.customCountryList);
+        CustomBaseAdapter customBaseAdapter = new CustomBaseAdapter(getApplicationContext(), countryList, countryImages);
         listView.setAdapter(customBaseAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -38,22 +38,22 @@ public class MainActivity extends AppCompatActivity {
                 switch (position)
                 {
                     case 0:
-                        startActivity(new Intent(MainActivity.this,Tropical.class));
+                        startActivity(new Intent(MainActivity.this,Nigeria.class));
                         break;
                     case 1:
-                        startActivity(new Intent(MainActivity.this,PeachPlum.class));
+                        startActivity(new Intent(MainActivity.this, SouthAfrica.class));
                         break;
                     case 2:
-                        startActivity(new Intent(MainActivity.this,MelonLemon.class));
+                        startActivity(new Intent(MainActivity.this, UnitedStates.class));
                         break;
                     case 3:
-                        startActivity(new Intent(MainActivity.this,HulkClassic.class));
+                        startActivity(new Intent(MainActivity.this, UnitedKingdom.class));
                         break;
                     case 4:
-                        startActivity(new Intent(MainActivity.this,Berrific.class));
+                        startActivity(new Intent(MainActivity.this, Zambia.class));
                         break;
                     case 5:
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.thesmoothiesite.com")));
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://zim.gov.zw/index.php/en/")));
                         break;
 
 

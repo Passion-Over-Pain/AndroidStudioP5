@@ -13,22 +13,22 @@
         android:theme="@style/Theme.Practical5"
         tools:targetApi="31">
         <activity
-            android:name=".Berrific"
+            android:name=".Zambia"
             android:exported="false" />
         <activity
-            android:name=".HulkClassic"
+            android:name=".UnitedKingdom"
             android:exported="false" />
         <activity
-            android:name=".MelonLemon"
+            android:name=".UnitedStates"
             android:exported="false" />
         <activity
-            android:name=".PeachPlum"
+            android:name=".SouthAfrica"
             android:exported="false" />
         <activity
-            android:name=".Tropical"
+            android:name=".Nigeria"
             android:exported="false" />
         <activity
-            android:name=".SmoothieList"
+            android:name=".CountryList"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
